@@ -1,10 +1,12 @@
 package controllers;
 
 import model.User;
+import play.Logger;
 import play.data.Form;
+import play.i18n.Messages;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.userCreate;
+import views.html.create;
 
 public class CreateUserController extends Controller {
 
@@ -13,12 +15,17 @@ public class CreateUserController extends Controller {
 
     public Result render(){
 
-        return ok(userCreate.render(USER_FORM));
+        return ok(create.render(USER_FORM));
     }
 
     public Result doCreateUser(){
-
-        return ok();
+        Form<User> userForm = USER_FORM.bindFromRequest();
+        if (userForm.hasErrors()) {
+            Logger.error("a user could not be created.");
+            return badRequest(create.render(userForm));
+        }
+        flash("success", Messages.get("user.successful.created"));
+        return ok(create.render(USER_FORM));
     }
 
 }

@@ -4,3 +4,4 @@ user.create.form.submit = Anlegen
 user.create.headline = Benutzer anlegen
 user.create.title = Benutzer anlegen
 user.create.userName.placeHolder = Benutzername
+user.successful.created = Benutzer wurde erfolgreich angelegt

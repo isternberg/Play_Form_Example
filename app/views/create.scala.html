@@ -19,6 +19,14 @@
 
         @b3.password(userForm("userName"), '_id -> "oldPassword", 'placeholder -> Messages("user.create.userName.placeHolder"))
 
+        @if(flash.contains("success")) {
+          <div id="successMessage" class="alert alert-success">
+            <p class="success">
+            @flash.get("success")
+            </p>
+          </div>
+        }
+
 
         @b3.submit('_id -> "submit", 'class -> "btn btn-info") {
           <span class="glyphicon glyphicon-ok"></span> @Messages("user.create.form.submit")
