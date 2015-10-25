@@ -1,0 +1,6 @@
+header.text.brand = UNI NINJA
+user.create.error = something bad happened
+user.create.form.submit = Anlegen
+user.create.headline = Benutzer anlegen
+user.create.title = Benutzer anlegen
+user.create.userName.placeHolder = Benutzername

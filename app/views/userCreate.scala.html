@@ -1,0 +1,31 @@
+@import model.User
+@(userForm: Form[User])
+@implicitFieldConstructor = @{
+  b3.vertical.fieldConstructor
+}
+@* the 2nd param to the pageTemplate determines whether the dropdown will be shown or not *@
+@pageTemplate(Messages("user.create.title"), true){
+  <div class="col-md-3 "></div>
+  <div class="container col-md-5">
+    <h1 id="page_title">@Messages("user.create.headline")</h1>
+    <div class="change-password-group">
+      @if(userForm.hasGlobalErrors) {
+        <div class="row">
+          <div class="alert alert-danger" id="error-message" role="alert">@Messages("user.create.error")</div>
+        </div>
+      }
+
+      @helper.form(action = routes.CreateUserController.doCreateUser(), 'id -> "createUserForm") {
+
+        @b3.password(userForm("userName"), '_id -> "oldPassword", 'placeholder -> Messages("user.create.userName.placeHolder"))
+
+
+        @b3.submit('_id -> "submit", 'class -> "btn btn-info") {
+          <span class="glyphicon glyphicon-ok"></span> @Messages("user.create.form.submit")
+        }
+      }
+    </div>
+  </div>
+}{
+
+}
