@@ -5,6 +5,7 @@ user.create.headline = Benutzer anlegen
 user.create.about.placeHolder = Über mich
 user.create.title = Ninjas
 user.create.userName.placeHolder = Benutzername
+users.list.title = Ninjas
 user.successful.created = Benutzer wurde erfolgreich angelegt
 users.list.headline = Benutzersliste
 users.table.header = Registrierte Benutzer
