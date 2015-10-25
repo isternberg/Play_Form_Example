@@ -7,13 +7,13 @@
 @pageTemplate(Messages("user.create.title"), true){
   <div class="col-md-3 "></div>
   <div class="container col-md-5">
-    <h1 id="page_title">@Messages("user.create.headline")</h1>
+    <h1 id="foo">@Messages("user.create.headline")</h1>
     <div class="create-user-form">
 
       @helper.form(action = routes.CreateUserController.doCreateUser(), 'id -> "createUserForm") {
 
         @b3.text(userForm("userName"), '_id -> "loginNameInput", 'placeholder -> Messages("user.create.userName.placeHolder"))
-        @b3.select(userForm("userName"), degrees.map(d => d.toString() -> d.toString))
+        @b3.select(userForm("degree"), degrees.map(d => d.toString() -> d.toString))
         @b3.textarea(userForm("aboutText"), '_id -> "userAboutInput", 'placeholder -> Messages("user.create.about.placeHolder"))
 
 
@@ -39,5 +39,15 @@
     </div>
   </div>
 }{
+  <script>
+    $(document).ready(function(){
+      $('.glyphicon-education').mouseover(function(){
+        $(this).addClass('blue');
+      });
+      $('.glyphicon-education').mouseout(function(){
+        $(this).removeClass('blue');
+      });
+    });
 
+  </script>
 }

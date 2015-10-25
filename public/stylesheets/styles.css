@@ -2,7 +2,6 @@
     background-color:#E0DADA;
     height: 130px;
     opacity: 0.8;
-    /*border-bottom: 0.2px solid orange;*/
 }
 
 .logo{
@@ -22,15 +21,21 @@
     color: red;
     opacity: 0.5;
 }
+.blue {
+    font-size: 80px;
+    color:#00b3ee;
+}
 .whiteoff{
     padding-left: 5px;
     color: #D6D2D2;
     opacity: 0.9;
-
 }
 
 #page_title{
     color: #1F1F1F;
     opacity: 0.7;
+}
 
+.panel-heading{
+    font-weight: 600;
 }

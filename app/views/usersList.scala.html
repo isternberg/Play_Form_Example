@@ -1,0 +1,27 @@
+@import model.User
+@import java.util
+
+@(users: util.List[User])
+
+@pageTemplate(Messages("users.list.title")) {
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <h1 id="page_title">@Messages("users.list.headline")</h1>
+  <div class="panel panel-default">
+    <div class="panel-heading">@Messages("users.table.header")</div>
+    <table class="table">
+    @for(u <- users) {
+      @if(u.userName != null) {
+        <tr>
+          <td>@u.userName</td>
+          <td>@u.degree</td>
+          <td>@u.aboutText</td>
+        </tr>
+      }
+    }
+    </table>
+  </div>
+  </div>
+
+} {
+}
