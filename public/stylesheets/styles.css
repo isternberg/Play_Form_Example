@@ -1,0 +1,36 @@
+.navbar-static-top{
+    background-color:#E0DADA;
+    height: 130px;
+    opacity: 0.8;
+    /*border-bottom: 0.2px solid orange;*/
+}
+
+.logo{
+    font-family: monospace, monospace;
+    font-size:50px;
+    color: whitesmoke;
+}
+
+.navbar-brand{
+    margin-top: 20px;
+    padding-top: 30px;
+}
+
+.glyphicon-education{
+    padding-top: 20px;
+    font-size: 50px;
+    color: red;
+    opacity: 0.5;
+}
+.whiteoff{
+    padding-left: 5px;
+    color: #D6D2D2;
+    opacity: 0.9;
+
+}
+
+#page_title{
+    color: #1F1F1F;
+    opacity: 0.7;
+
+}

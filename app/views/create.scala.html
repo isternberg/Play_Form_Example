@@ -1,5 +1,5 @@
 @import model.User
-@(userForm: Form[User])
+@(userForm: Form[User], degrees : java.util.List[String])
 @implicitFieldConstructor = @{
   b3.vertical.fieldConstructor
 }
@@ -8,17 +8,16 @@
   <div class="col-md-3 "></div>
   <div class="container col-md-5">
     <h1 id="page_title">@Messages("user.create.headline")</h1>
-    <div class="change-password-group">
-      @if(userForm.hasGlobalErrors) {
-        <div class="row">
-          <div class="alert alert-danger" id="error-message" role="alert">@Messages("user.create.error")</div>
-        </div>
-      }
+    <div class="create-user-form">
 
       @helper.form(action = routes.CreateUserController.doCreateUser(), 'id -> "createUserForm") {
 
-        @b3.password(userForm("userName"), '_id -> "oldPassword", 'placeholder -> Messages("user.create.userName.placeHolder"))
+        @b3.text(userForm("userName"), '_id -> "loginNameInput", 'placeholder -> Messages("user.create.userName.placeHolder"))
+        @b3.select(userForm("userName"), degrees.map(d => d.toString() -> d.toString))
+        @b3.textarea(userForm("aboutText"), '_id -> "userAboutInput", 'placeholder -> Messages("user.create.about.placeHolder"))
 
+
+        @* Confirmation message *@
         @if(flash.contains("success")) {
           <div id="successMessage" class="alert alert-success">
             <p class="success">
@@ -26,9 +25,14 @@
             </p>
           </div>
         }
+        @* Error message *@
+        @if(userForm.hasGlobalErrors) {
+          <div class="row">
+            <div class="alert alert-danger" id="error-message" role="alert">@Messages("user.create.error")</div>
+          </div>
+        }
 
-
-        @b3.submit('_id -> "submit", 'class -> "btn btn-info") {
+        @b3.submit('_id -> "submit", 'class -> "btn btn-warning") {
           <span class="glyphicon glyphicon-ok"></span> @Messages("user.create.form.submit")
         }
       }
