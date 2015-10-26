@@ -4,7 +4,7 @@ import com.google.inject.Inject;
 import model.UsersService;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
+import views.html.usersList;
 
 public class UsersList extends Controller{
 
@@ -12,7 +12,6 @@ public class UsersList extends Controller{
     UsersService usersService;
 
     public Result render(){
-
         return ok(usersList.render(usersService.getUsers()));
     }
 
