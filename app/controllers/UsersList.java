@@ -1,7 +1,9 @@
 package controllers;
 
 import com.google.inject.Inject;
-import model.UsersService;
+import models.User;
+import models.UsersService;
+import play.Logger;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.usersList;
@@ -12,7 +14,11 @@ public class UsersList extends Controller{
     UsersService usersService;
 
     public Result render(){
-        return ok(usersList.render(usersService.getUsers()));
+
+        for (User u : User.all()){
+            Logger.debug(u.userName);
+        }
+        return ok(usersList.render(User.all()));
     }
 
 }

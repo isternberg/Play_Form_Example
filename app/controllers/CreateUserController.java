@@ -1,9 +1,8 @@
 package controllers;
 
-import model.DegreesService;
-import model.User;
+import models.DegreesService;
+import models.User;
 import play.Logger;
-import play.Routes;
 import play.data.Form;
 import play.i18n.Messages;
 import play.mvc.Controller;
@@ -36,6 +35,7 @@ public class CreateUserController extends Controller {
 //            return badRequest(create.render(userForm));
 //        }
         User createdUser = userForm.get();
+        User.create(createdUser);
         flash("success", Messages.get("user.successful.created"));
         return redirect(routes.CreateUserController.render());
     }
