@@ -8,4 +8,6 @@ user.create.userName.placeHolder = Benutzername
 users.list.title = Ninjas
 user.successful.created = Benutzer wurde erfolgreich angelegt
 users.list.headline = Benutzersliste
-users.table.header = Registrierte Benutzer
+users.table.userName = Benutzername
+users.table.degree = Studiengang
+users.table.aboutText = Über mich

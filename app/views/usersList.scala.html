@@ -7,21 +7,42 @@
   <div class="col-md-2"></div>
   <div class="col-md-8">
     <h1 id="page_title">@Messages("users.list.headline")</h1>
-  <div class="panel panel-default">
-    <div class="panel-heading">@Messages("users.table.header")</div>
+
     <table class="table">
+          <thead>
+            <tr>
+              <th>@Messages("users.table.userName")</th>
+              <th>@Messages("users.table.degree")</th>
+              <th>@Messages("users.table.aboutText")</th>
+            </tr>
+          </thead>
+
+      <tbody>
     @for(u <- users) {
       @if(u.userName != null) {
-        <tr>
+        <tr class="table_row">
           <td>@u.userName</td>
           <td>@u.degree</td>
           <td>@u.aboutText</td>
         </tr>
       }
     }
+      </tbody>
     </table>
-  </div>
   </div>
 
 } {
+  <script>
+       $(document).ready(function(){
+      $('.table_row').mouseover(function(){
+        $(this).addClass('highlighted');
+      });
+      $('.table_row').mouseout(function(){
+        $(this).removeClass('highlighted');
+      });
+    });
+
+
+  </script>
+
 }

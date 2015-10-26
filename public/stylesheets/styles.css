@@ -39,3 +39,15 @@
 .panel-heading{
     font-weight: 600;
 }
+
+thead {
+    background-color: #E0DADA;
+    opacity: 0.8;
+}
+.table{
+    margin-top: 25px;
+}
+
+.highlighted{
+    background-color: khaki;
+}
