@@ -6,8 +6,9 @@
 @* the 2nd param to the pageTemplate determines whether the dropdown will be shown or not *@
 @pageTemplate(Messages("user.create.title"), true){
   <div class="col-md-3 "></div>
-  <div class="container col-md-5">
+  <div class="container col-md-6">
     <h1 id="foo">@Messages("user.create.headline")</h1>
+
     <div class="create-user-form">
 
       @helper.form(action = routes.CreateUserController.doCreateUser(), 'id -> "createUserForm") {
@@ -36,8 +37,10 @@
           <span class="glyphicon glyphicon-ok"></span> @Messages("user.create.form.submit")
         }
       }
+
     </div>
   </div>
+
 }{
   <script>
     $(document).ready(function(){
