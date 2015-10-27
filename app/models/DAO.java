@@ -10,10 +10,18 @@ public class DAO {
             Long.class, User.class
     );
 
-    public static List<User> getUsers(){
-        List<User> users= DAO.find.all();
-        return users;
+    public static List<User> all() {
+        return find.all();
     }
+
+    public static void create(User user) {
+        user.save();
+    }
+
+    public static void delete(Long id) {
+        find.ref(id).delete();
+    }
+
 
 
 }

@@ -2,8 +2,9 @@ package models;
 
 import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
-import javax.persistence.*;
-import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 
 @Entity
@@ -29,20 +30,5 @@ public class User extends Model {
 
     public String aboutText;
 
-    public static Model.Finder<Long,User> find = new Model.Finder<Long,User>(
-            Long.class, User.class
-    );
-
-    public static List<User> all() {
-        return find.all();
-    }
-
-    public static void create(User user) {
-        user.save();
-    }
-
-    public static void delete(Long id) {
-        find.ref(id).delete();
-    }
 
 }
