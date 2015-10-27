@@ -4,21 +4,21 @@ import com.avaje.ebean.Model;
 
 import java.util.List;
 
-public class DAO {
+public class UserserviceImpl implements  UserService{
 
     public static Model.Finder<Long,User> find = new Model.Finder<Long,User>(
             Long.class, User.class
     );
 
-    public static List<User> all() {
+    public List<User> getAllUsers() {
         return find.all();
     }
 
-    public static void create(User user) {
+    public void create(User user) {
         user.save();
     }
 
-    public static void delete(Long id) {
+    public void delete(Long id) {
         find.ref(id).delete();
     }
 

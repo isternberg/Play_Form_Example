@@ -1,9 +1,10 @@
 package controllers;
 
 import helpers.FormValidator;
-import models.DAO;
-import models.DegreesService;
+import models.DegreeService;
 import models.User;
+import models.UserService;
+import models.UserserviceImpl;
 import play.Logger;
 import play.data.Form;
 import play.i18n.Messages;
@@ -18,7 +19,10 @@ public class CreateUserController extends Controller {
     public static final String MIN_USERNAME_LENGTH = " 2-";
 
     @Inject
-    DegreesService degreesService;
+    DegreeService degreesService;
+
+    @Inject
+    UserService userService;
 
     private static final Form<User> USER_FORM = Form.form(User.class);
 
@@ -40,7 +44,7 @@ public class CreateUserController extends Controller {
                     + Messages.get("user.create.username.length.error.end"));
             return badRequest(create.render(userForm, degreesService.getDegrees()));
         }
-        DAO.create(createdUser);
+        userService.create(createdUser);
         flash("success", Messages.get("user.successful.created"));
         return redirect(routes.CreateUserController.render());
     }

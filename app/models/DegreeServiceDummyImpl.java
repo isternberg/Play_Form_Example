@@ -3,7 +3,7 @@ package models;
 import java.util.Arrays;
 import java.util.List;
 
-public class DegreesServiceDummyImpl implements  DegreesService {
+public class DegreeServiceDummyImpl implements DegreeService {
     @Override
     public List<String> getDegrees() {
         List<String> degrees = Arrays.asList("Angewandte Informatik", "Bauingenieurwesen",

@@ -4,8 +4,8 @@ import com.google.inject.ImplementedBy;
 
 import java.util.List;
 
-@ImplementedBy(DegreesServiceDummyImpl.class)
-public interface DegreesService {
+@ImplementedBy(DegreeServiceDummyImpl.class)
+public interface DegreeService {
 
     public List<String> getDegrees();
 }
