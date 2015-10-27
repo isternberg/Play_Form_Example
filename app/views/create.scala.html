@@ -3,8 +3,7 @@
 @implicitFieldConstructor = @{
   b3.vertical.fieldConstructor
 }
-@* the 2nd param to the pageTemplate determines whether the dropdown will be shown or not *@
-@pageTemplate(Messages("user.create.title"), true){
+@pageTemplate(Messages("user.create.title")){
   <div class="col-md-3 "></div>
   <div class="container col-md-6">
     <h1 id="foo">@Messages("user.create.headline")</h1>
@@ -29,7 +28,7 @@
         @* Error message *@
         @if(userForm.hasGlobalErrors) {
           <div class="row">
-            <div class="alert alert-danger" id="error-message" role="alert">@Messages("user.create.error")</div>
+            <div class="alert alert-danger" id="error-message" role="alert">@userForm.globalError.message</div>
           </div>
         }
 

@@ -1,4 +1,4 @@
-@(title: String, hasDropdown: Boolean = false)(content: Html)(javascript: Html)
+@(title: String)(content: Html)(javascript: Html)
 @import helper._
 
 
@@ -12,7 +12,7 @@
     <title >@title</title>
   </head>
   <body>
-    @header(hasDropdown)
+    @header()
     @content
     @footer()
     @javascriptImports()

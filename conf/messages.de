@@ -1,9 +1,9 @@
 header.text.brand = UNI NINJAS
-user.create.error = something bad happened
+user.create.username.length.error.begin = Der Benutzer name muss mind.
+user.create.username.length.error.end = stellig sein
 user.create.form.submit = Anlegen
 user.create.headline = Benutzer anlegen
 user.create.about.placeHolder = Über mich
-user.create.link.toList = Benutzersliste
 user.create.title = Ninjas
 user.create.userName.placeHolder = Benutzername
 users.list.title = Ninjas

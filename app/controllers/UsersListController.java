@@ -8,7 +8,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.usersList;
 
-public class UsersList extends Controller{
+public class UsersListController extends Controller{
 
     @Inject
     UsersService usersService;

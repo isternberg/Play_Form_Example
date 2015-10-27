@@ -1,5 +1,6 @@
 package controllers;
 
+import helpers.FormValidator;
 import models.DegreesService;
 import models.User;
 import play.Logger;
@@ -13,6 +14,7 @@ import javax.inject.Inject;
 
 public class CreateUserController extends Controller {
 
+    public static final String MIN_USERNAME_LENGTH = " 2-";
     @Inject
     DegreesService degreesService;
 
@@ -30,11 +32,12 @@ public class CreateUserController extends Controller {
             Logger.error("a user could not be created.");
             return badRequest(create.render(userForm, degreesService.getDegrees()));
         }
-//        if (true){
-//            userForm.reject(Messages.get("login.data.wrong"));
-//            return badRequest(create.render(userForm));
-//        }
         User createdUser = userForm.get();
+        if (!FormValidator.validateInputLength(createdUser.userName)){
+            userForm.reject(Messages.get("user.create.username.length.error.begin") + MIN_USERNAME_LENGTH
+                    + Messages.get("user.create.username.length.error.end"));
+            return badRequest(create.render(userForm, degreesService.getDegrees()));
+        }
         User.create(createdUser);
         flash("success", Messages.get("user.successful.created"));
         return redirect(routes.CreateUserController.render());

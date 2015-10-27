@@ -7,7 +7,7 @@
 GET     /user/create                controllers.CreateUserController.render()
 POST    /user/create                controllers.CreateUserController.doCreateUser()
 
-GET     /user/list                  controllers.UsersList.render()
+GET     /user/list                  controllers.UsersListController.render()
 
 
 # Map static resources from the /public folder to the /assets URL path
