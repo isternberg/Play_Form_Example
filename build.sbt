@@ -14,7 +14,8 @@ libraryDependencies ++= Seq(
   "org.webjars" %% "webjars-play" % "2.4.0-1",
   "com.adrianhurt" %% "play-bootstrap3" % "0.4.4-P24",
   "org.mockito" % "mockito-core" % "1.9.5" % "test",
-  "org.seleniumhq.selenium" % "selenium-java" % "2.47.1" % "test"
+  "org.seleniumhq.selenium" % "selenium-java" % "2.47.1" % "test",
+  "mysql" % "mysql-connector-java" % "5.1.18"
 )
 
 // Play provides two styles of routers, one expects its actions to be injected, the
